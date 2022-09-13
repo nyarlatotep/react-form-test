@@ -1,0 +1,77 @@
+{
+  "components": [
+    {
+      "type": "TextInput",
+      "attributes": {
+        "keycomponent": "text_input_component",
+        "id": "text_input_id",
+        "placeholder": "placeholder",
+        "value": "value",
+        "type": "text"
+      }
+    },
+    {
+      "type": "SelectInput",
+      "attributes": {
+        "keycomponent": "select_input_component",
+        "id": "select_input_id",
+        "placeholder": "placeholder",
+        "value": "value",
+        "type": "text",
+        "options": [
+          {
+            "attributes": {
+              "label": "option1",
+              "keycomponent": "select_option1",
+              "value": "select option1 value"
+            }
+          },
+          {
+            "attributes": {
+              "label": "option2",
+              "keycomponent": "select_option2",
+              "value": "select option2 value"
+            }
+          },
+          {
+            "attributes": {
+              "label": "option3",
+              "keycomponent": "select_option3",
+              "value": "select option3 value"
+            }
+          }
+        ]
+      }
+    },
+    {
+      "type": "OptionsInput",
+      "attributes": {
+        "keycomponent": "radio_input_component",
+        "id": "options_input_id",
+        "items": [
+          {
+            "attributes": {
+              "label": "radio option 1",
+              "value": "radio option1 value",
+              "keycomponent": "radio_option1"
+            }
+          },
+          {
+            "attributes": {
+              "label": "radio option 2",
+              "value": "radio option2 value",
+              "keycomponent": "radio_option2"
+            }
+          },
+          {
+            "attributes": {
+              "label": "radio option 3",
+              "value": "radio option3 value",
+              "keycomponent": "radio_option3"
+            }
+          }
+        ]
+      }
+    }
+  ]
+}

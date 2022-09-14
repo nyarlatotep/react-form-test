@@ -7,7 +7,8 @@
         "id": "text_input_id",
         "placeholder": "placeholder",
         "value": "value",
-        "type": "text"
+        "type": "text",
+        "i": 0
       }
     },
     {
@@ -18,6 +19,7 @@
         "placeholder": "placeholder",
         "value": "value",
         "type": "text",
+        "i": 1,
         "options": [
           {
             "attributes": {
@@ -48,6 +50,7 @@
       "attributes": {
         "keycomponent": "radio_input_component",
         "id": "options_input_id",
+        "i": 2,
         "items": [
           {
             "attributes": {

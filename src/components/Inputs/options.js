@@ -23,7 +23,8 @@ function OptionsInput(props) {
                             key={`${attributes?.keycomponent || attributes.value}_${i}`}
                             type='radio'
                             className='radio_input'
-                            value={attributes?.value}
+                            name={attributes.label}
+                            value={props?.value?.radio}
                             onChange={handleChangeOption}
                         />
                                 </label>

@@ -70,44 +70,45 @@ export class ContainerForm extends React.Component {
 
     handleChangeText(ev) {
         ev.preventDefault();
-        const {text} = this.state.value;
+
         const {target} = ev;
         const {value} = target;
 
-        if (this.inputSelected !== target.name)
-            this.inputSelected = target.name;
-
-        this.setState({
-            [text]: value,
-        });
+        this.setState((prevState) => ({
+            value: {
+                ...prevState.value,
+                text: value
+            }
+        }));
     }
 
     handleChangeSelect(ev) {
         ev.preventDefault();
-        const {select} = this.state.value;
         const {target} = ev;
         const {value} = target;
 
-        if (this.inputSelected !== target.name)
-            this.inputSelected = target.name;
-
-        this.setState({
-            [select]: value,
-        })
+        console.log('handleChangeSelect', value);
+        this.setState((prevState) => ({
+            value: {
+                ...prevState.value,
+                select: value
+            }
+        }));
     }
 
     handleChangeOptions(ev) {
         ev.preventDefault();
         const {radio} = this.state.value;
         const {target} = ev;
-        const {value} = target;
+        const {name} = target;
 
-        if (this.inputSelected !== target.name)
-            this.inputSelected = target.name;
-
-        this.setState({
-            [radio]: value,
-        })
+        console.log('handleChangeOptions', name, radio);
+        this.setState((prevSate) => ({
+            value: {
+                ...prevSate.value,
+                radio: name
+            },
+        }))
     }
 
     handleAddComponents = (ev, component, index) => {
@@ -120,12 +121,11 @@ export class ContainerForm extends React.Component {
         const componentCopy = Object.assign({}, newComponent);
         const componentExistent = this.components.get(`${component}_${name}`);
 
-        if (componentExistent){
+        if (componentExistent) {
             count++;
-        this.componentIndex = count;
+            this.componentIndex = count;
             this.components.set(`${component}_${name}_${count}`, componentCopy);
-        }
-        else
+        } else
             this.components.set(`${component}_${name}`, componentCopy);
 
         this.componentsLength = this.components.size;
@@ -158,8 +158,7 @@ export class ContainerForm extends React.Component {
 
         if (componentFound) {
             this.components.delete(`${component}_${name}`);
-        }
-        else
+        } else
             this.components.delete(`${component}_${name}_${index}`);
 
         console.log('handleRemoveComponents', this.components, component, index);
@@ -212,10 +211,15 @@ export class ContainerForm extends React.Component {
                                                 }
                                                 <Component
                                                     key={`${attributes?.keycomponent}_${i}`}
+                                                    value={{
+                                                        text: this.state.value.text,
+                                                        select: this.state.value.select,
+                                                        radio: this.state.value.radio
+                                                    }}
                                                     {...{
                                                         ...component,
                                                         attributes: {
-                                                            ...attributes
+                                                            ...attributes,
                                                         },
                                                         handlers: {
                                                             handleChangeText: this.handleChangeText,

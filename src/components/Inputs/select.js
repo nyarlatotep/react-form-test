@@ -10,7 +10,7 @@ function SelectInput(props) {
             className='select_input'
             id={attr?.id}
             placeholder={attr?.placeholder}
-            value={attr?.value}
+            value={props?.value?.select}
             onChange={handleChangeSelect}
         >
             {

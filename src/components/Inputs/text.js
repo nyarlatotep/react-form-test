@@ -3,13 +3,13 @@ import propTypes from "prop-types";
 
 function TextInput (props) {
     const {attributes: attr = {}, handlers: {handleChangeText}} = props;
-
+console.log('textInput', props);
     return (
         <input
         className='text_input'
         id={attr?.id}
         placeholder={attr?.placeholder}
-        value={attr?.value}
+        value={props?.value?.text}
         onChange={handleChangeText}
         type={attr?.type}
         />

@@ -149,7 +149,7 @@ export class ContainerForm extends React.Component {
     }
 
     handleRemoveComponents = (ev, component, index) => {
-        let count = 0;
+        // let count = 0;
 
         ev.preventDefault()
 
